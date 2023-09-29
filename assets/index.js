@@ -5,7 +5,7 @@ function getCurrentWeather(data) {
 var lat = data[0].lat
 var lon = data[0].lon
 
-  fetch("https://api.openweathermap.org/data/2.5/forecast?lat=lat&lon=lon&appid=c5d423c4815b48e87a0ce37757048cf1")
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=c5d423c4815b48e87a0ce37757048cf1`)
   
     .then(function (response) {
       return response.json();
@@ -27,6 +27,21 @@ function getGeoCode() {
       getCurrentWeather(data);
     });
 }
+
+function search(){
+  this.getCurrentWeather(document.querySelector("#search-bar").value);
+  console.log(value);
+};
+
+document.querySelector("#search-bar").addEventListener("click", function () {
+  getCurrentWeather.search();
+});
+
+document.querySelector("#search-bar").addEventListener("keyup", function(event) {
+  if (event.key == "Enter") {
+    getCurrentWeather.search();
+  }
+});
 
 getGeoCode()
 
