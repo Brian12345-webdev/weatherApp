@@ -66,7 +66,8 @@ document.querySelector("#search-bar").addEventListener("keydown", function (even
 
 function fiveDayForecastCards () {
   //  for (var i = 0; i < 5; i++) {
-  //   document.getElementById('five-day').textContent = 
+  //   var fiveDay = document.createElement('#five-day')
+  //   getFiveDayWeather.append(fiveDay);
   //   }
 }
 
