@@ -1,6 +1,6 @@
 var geoCode = getGeoCode
 var fiveDayForecastEl = document.querySelector('#five-day');
-var cityButton = document.querySelector('.btn btn-primary');
+var cityButtonEl = document.querySelector('.btn btn-primary');
 
 function getFiveDayWeather(data) {
 
@@ -81,5 +81,11 @@ function displayFiveDayForecast(forecast) {
 // var currentCity = document.createElement("#current-city");
 
 
+
+
+// cityButtonEl.addEventListener("click", function (event) {
+  //   var city = document.createElement("div");
+  //  
+// });
 
 
