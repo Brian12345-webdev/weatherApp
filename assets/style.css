@@ -10,10 +10,26 @@
 }
 
 #current-city {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     border: black solid;
-    width: 50px;
-    height: 40px;
+    width: 750px;
+    height:200px;
     border-radius: 5px;
+}
 
+#five-day {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 750px;
+    height: auto;
+   
+}
+
+.list-item {
+    border-radius: 10px;
+    background-color: rgb(112, 112, 228);
+    width: 100px;
 }
