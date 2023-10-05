@@ -14,6 +14,8 @@ THIS APPLICATION contains a search input for a user to personally search any giv
 # SITE ACCESS
 
 # SITE: 
-
+https://grasshopper12345.github.io/weatherApp/
 # GITHUB: 
 https://github.com/GrassHopper12345/weatherApp 
+
+![Alt text](image.png)
