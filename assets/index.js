@@ -80,9 +80,10 @@ function displayFiveDayForecast(forecast) {
     var date = document.createElement("p");
     date.innerText = filteredArray[i].dt_txt;
     fiveDays.appendChild(date);
-    var weatherIcon = document.createElement("p");
-    weatherIcon.innerText = forecast.list[i].weather.icon;
-    fiveDays.appendChild(weatherIcon);
+    // var weatherIcon = document.createElement("img");
+    // weatherIcon.setAttribute("src" `https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`)
+    // weatherIcon.setAttribute('class', 'w-25 h-25');
+    // fiveDays.appendChild(weatherIcon);
     var temperature = document.createElement("p");
     temperature.innerText = filteredArray[i].main.temp;
     fiveDays.appendChild(temperature);
@@ -110,7 +111,7 @@ function currentCity(forecast) {
   // date.innerText = forecast.dt_txt;
   // currentCityEl.appendChild(date);
   var weatherIcon = document.createElement("img");
-  weatherIcon.setAttribute("src",`https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`) 
+  weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`)
   weatherIcon.setAttribute('class', 'w-25 h-25');
   currentCityEl.appendChild(weatherIcon);
   var temperature = document.createElement("p");
@@ -127,11 +128,11 @@ function currentCity(forecast) {
 
 
 
-cityButtonEl.addEventListener("click", function (event) {
-  var cityName = event.target.innerText;
-  console.log(cityName);
+
+  var cityName = document.getElementsByClassName("city");
+for (var cityName of buttons) {
+  buttons.addEventListener("click", function (event) {
   getFiveDayWeather(cityName);
-  // currentCityEl(cityName);
-});
+  });
 
-
+}
