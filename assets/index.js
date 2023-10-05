@@ -78,20 +78,20 @@ function displayFiveDayForecast(forecast) {
 
     // Need to see the dates
     var date = document.createElement("p");
-    date.innerText = filteredArray[i].dt_txt;
+    date.innerText = "Date: " + filteredArray[i].dt_txt;
     fiveDays.appendChild(date);
     // var weatherIcon = document.createElement("img");
     // weatherIcon.setAttribute("src" `https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`)
     // weatherIcon.setAttribute('class', 'w-25 h-25');
     // fiveDays.appendChild(weatherIcon);
     var temperature = document.createElement("p");
-    temperature.innerText = filteredArray[i].main.temp;
+    temperature.innerText = "Temp: " + filteredArray[i].main.temp;
     fiveDays.appendChild(temperature);
     var humidity = document.createElement("p");
-    humidity.innerText = filteredArray[i].main.humidity;
+    humidity.innerText = "Humidity: " + filteredArray[i].main.humidity;
     fiveDays.appendChild(humidity);
     var wind = document.createElement("p");
-    wind.innerText = filteredArray[i].wind.speed;
+    wind.innerText = "Wind Speed: " + filteredArray[i].wind.speed;
     fiveDays.appendChild(wind);
 
     weather.appendChild(fiveDays);
@@ -115,27 +115,28 @@ function currentCity(forecast) {
   weatherIcon.setAttribute('class', 'w-25 h-25');
   currentCityEl.appendChild(weatherIcon);
   var temperature = document.createElement("p");
-  temperature.innerText = forecast.main.temp;
+  temperature.innerText = "Temp: " + forecast.main.temp;
   currentCityEl.appendChild(temperature);
   var humidity = document.createElement("p");
-  humidity.innerText = forecast.main.humidity;
+  humidity.innerText = "Humidity: " + forecast.main.humidity;
   currentCityEl.appendChild(humidity);
   var wind = document.createElement("p");
-  wind.innerText = forecast.wind.speed
+  wind.innerText = "Wind Speed: " + forecast.wind.speed
   currentCityEl.appendChild(wind);
 
 }
 
 
 
-cityButtonEl.addEventListener("click", function (event) {
-  var cityName = event.target.innerText;
-  console.log(cityName);
-  getFiveDayWeather(cityName);
+// cityButtonEl.addEventListener("click", function (event) {
+//   var cityName = event.target.innerText;
+//   console.log(cityName);
+//   getFiveDayWeather(cityName);
   
-});
+// });
 
-// document.getElementById('buttons').addEventListener("click", event => {
-//   if (event.target.className === "city") {
-//     getFiveDayWeather(event.target.innerText);
-// }});
+document.getElementById('buttons').addEventListener("click", event => {
+  if (event.target.matches(".city")) {
+  console.log("clicked");
+    getGeoCode(event.target.textContent);
+}});
