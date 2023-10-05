@@ -30,7 +30,7 @@ function currentWeather(data) {
 }
 
 function getGeoCode(cityName) {
-  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=c5d423c4815b48e87a0ce37757048cf1`)
+  fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=c5d423c4815b48e87a0ce37757048cf1`)
     .then(function (response) {
       return response.json();
     })
@@ -132,7 +132,10 @@ cityButtonEl.addEventListener("click", function (event) {
   var cityName = event.target.innerText;
   console.log(cityName);
   getFiveDayWeather(cityName);
-  // currentCityEl(cityName);
+  
 });
 
-
+// document.getElementById('buttons').addEventListener("click", event => {
+//   if (event.target.className === "city") {
+//     getFiveDayWeather(event.target.innerText);
+// }});
