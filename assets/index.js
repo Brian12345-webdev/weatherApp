@@ -128,11 +128,11 @@ function currentCity(forecast) {
 
 
 
-
-  var cityName = document.getElementsByClassName("city");
-for (var cityName of buttons) {
-  buttons.addEventListener("click", function (event) {
+cityButtonEl.addEventListener("click", function (event) {
+  var cityName = event.target.innerText;
+  console.log(cityName);
   getFiveDayWeather(cityName);
-  });
+  // currentCityEl(cityName);
+});
 
-}
+
