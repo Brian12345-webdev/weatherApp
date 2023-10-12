@@ -1,4 +1,3 @@
-var geoCode = getGeoCode
 var fiveDayForecastEl = document.querySelector('#five-day');
 var cityButtonEl = document.querySelector('.btn.btn-primary.city');
 
@@ -42,7 +41,7 @@ function getGeoCode(cityName) {
 }
 
 function search() {
-  this.getFiveDayWeather(document.querySelector("#search-bar").value);
+  getGeoCode(document.querySelector("#search-bar").value);
   console.log(value);
 };
 
@@ -53,7 +52,7 @@ document.querySelector("#search-bar").addEventListener("click", function () {
 
 document.querySelector("#search-bar").addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
-    getCurrentWeather.search();
+    search();
   }
 
   document.querySelector(".card").addEventListener("click", function (event) {
