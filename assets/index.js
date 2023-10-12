@@ -69,6 +69,7 @@ function displayFiveDayForecast(forecast) {
       return forecast;
     }
   })
+  fiveDayForecastEl.innerHTML = " "
   for (var i = 0; i < filteredArray.length; i++) {
     var weather = document.createElement("div");
     weather.classList = 'list-item flex-row justify-space-between align-center';
@@ -102,7 +103,7 @@ function displayFiveDayForecast(forecast) {
 var currentCityEl = document.querySelector("#current-city");
 
 function currentCity(forecast) {
-
+  currentCityEl.innerHTML = " "
   var displayCityName = document.createElement("h2");
   displayCityName.innerText = forecast.name;
   currentCityEl.appendChild(displayCityName);
